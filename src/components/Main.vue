@@ -12,9 +12,9 @@
 
             <SelectProperties></SelectProperties>
 
-            <SelectRubrics></SelectRubrics>
+            <SelectRubrics v-bind="areOptionsVisible"></SelectRubrics>
 
-            <SelectSubRubrics></SelectSubRubrics>
+            <SelectSubRubrics v-bind="areOptionsVisible"></SelectSubRubrics>
 
 
             <button class="search-btn">Найти</button>
@@ -163,6 +163,8 @@ export default {
         -moz-border-radius: 20px;
         border-radius: 20px;
         background-color: #263548;
+        outline: none;
+        cursor: pointer;
     }
     .search-btn-map{
         text-transform: uppercase;
@@ -174,5 +176,7 @@ export default {
         border-radius: 20px;
         background-color: #B7E3E8;
         color: #263548;
+        outline: none;
+        cursor: pointer;
     }
 </style>

@@ -4,78 +4,43 @@
             <h3>Популярные рубрики</h3>
             <form action="">
                 <label for="show-all">Показать все</label>
-                <input type="checkbox" class="show-all radio" id="show-all" v-on:change="display=!display">
+                <input type="checkbox" class="show-all radio" id="show-all" v-on:change="display = !display">
             </form>
         </header>
 
-        <ul class="category-list">
-            <li class="category-list__item">
-                <span></span>
-                Автосервис
-            </li>
-            <li class="category-list__item">
-                <span></span>
-                Безопасность
-            </li>
-            <li class="category-list__item">
-                <span></span>
-                Жилье и дом
-            </li>
-            <li class="category-list__item">
-                <span></span>
-                Бизнес
-            </li>
-            <li class="category-list__item">
-                <span></span>
-                Еда и напитки
-            </li>
-            <li class="category-list__item">
-                <span></span>
-                Здоровье и фитнес
-            </li>
-
-
-
-            <li class="category-list__item" v-show="display">
-                <span></span>
-                Автосервис
-            </li>
-            <li class="category-list__item" v-show="display">
-                <span></span>
-                Безопасность
-            </li>
-            <li class="category-list__item" v-show="display">
-                <span></span>
-                Жилье и дом
-            </li>
-            <li class="category-list__item" v-show="display">
-                <span></span>
-                Бизнес
-            </li>
-            <li class="category-list__item" v-show="display">
-                <span></span>
-                Еда и напитки
-            </li>
-            <li class="category-list__item" v-show="display">
-                <span></span>
-                Здоровье и фитнес
-            </li>
-        </ul>
+        <CategoryItem></CategoryItem>
 
     </section>
 </template>
 
 <script>
+    import CategoryItem from './CategoryItem';
+
+
     export default {
         data(){
             return{
                 display: false
             }
+        },
+        props: {
+
+        },
+        components: {
+            CategoryItem
         }
     }
 </script>
 
 <style>
+    @keyframes showCategory {
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
     .category{
         width: 100vw;
         height: 768px;
@@ -120,6 +85,7 @@
         background: url("../assets/ic_expand_more_black_18px.png") no-repeat center right;
         font-size: 22px;
         color: #2B4F6F;
+        animation: showCategory 1s alternate linear;
     }
     .category form{
         display: flex;

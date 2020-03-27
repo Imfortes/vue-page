@@ -1,11 +1,35 @@
 <template>
-    <select name="rubrics" id="selectRubrics" @mouseenter="showDropdown">
-        <option value="Category" v-for="(rubric, index) in rubrics" :key="index">{{rubric}}</option>
-    </select>
+<!--    <select name="rubrics" id="selectRubrics" @mouseenter="showDropdown">-->
+<!--        <option value="Category" v-for="(rubric, index) in rubrics" :key="index">{{rubric}}</option>-->
+<!--    </select>-->
+
+    <div class="rubrics" id="selectRubrics">
+        <p
+                class="rubrics__checked"
+                @click="areOptionsVisible = !areOptionsVisible"
+
+        >Рубрика</p>
+        <div class="rubrics__option"
+             v-if="areOptionsVisible"
+        >
+            <p
+                    v-for="(rubric, index) in rubrics"
+                    :key="index"
+            >
+                {{rubric}}
+            </p>
+        </div>
+    </div>
+
 </template>
 
 <script>
     export default {
+        props: {
+            areOptionsVisible: {
+                type: Boolean
+            }
+        },
         data(){
             return{
                 rubrics: [
@@ -28,6 +52,8 @@
                 event.initMouseEvent('mousedown', true, true, window);
                 element.dispatchEvent(event);
             }
+
+
         }
     }
 </script>
@@ -45,6 +71,7 @@
         background: url("../assets/ic_expand_more_black_18px.png") no-repeat center right;
         background-color: #fff;
         position: relative;
+        z-index: 100;
     }
 
 
@@ -55,5 +82,59 @@
         height: 40px;
         border: none;
         outline: none;
+    }
+
+    #selectRubrics p{
+        font-size: 13.3333px;
+        height: 100%;
+        color: #2B4F6F;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+    #selectRubrics .rubrics__option{
+        position: absolute;
+        top: 40px;
+        left: 0;
+        width: 180px;
+    }
+
+    #selectRubrics:hover,
+    #selectRubrics:active{
+        background: #fff;
+        color: #000;
+        background: url("../assets/ic_expand_more_black_18px.png") no-repeat center right;
+        background-color: #fff;
+        -webkit-border-radius: 20px 20px 0 0;
+        -moz-border-radius: 20px 20px 0 0;
+        border-radius:  20px 20px 0 0;
+    }
+    #selectRubrics p:hover{
+        color: #4BBAC5;
+
+    }
+    .rubrics__option p{
+        height: 40px;
+        width: 180px;
+        background: #fff;
+        color: #000;
+        padding: 8px 8px 8px 24px;
+    }
+    #subRubrics p:active{
+        color: #000;
+        background: #fff;
+    }
+    .rubrics__option p:last-child{
+        -webkit-border-radius: 0 0 20px 20px;
+        -moz-border-radius: 0 0 20px 20px;
+        border-radius: 0 0 20px 20px;
+    }
+    .rubrics__option p:last-child:hover{
+        -webkit-border-radius: 0 0 20px 20px;
+        -moz-border-radius: 0 0 20px 20px;
+        border-radius: 0 0 20px 20px;
+    }
+    .options p:hover{
+        color: #4BBAC5;
     }
 </style>
