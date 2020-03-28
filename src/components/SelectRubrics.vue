@@ -68,7 +68,7 @@
         padding: 8px 8px 8px 24px;
         border: none;
         appearance: none;
-        background: url("../assets/ic_expand_more_black_18px.png") no-repeat center right;
+        background: url("../assets/ic_expand_more_black_18px.png") no-repeat 95% 50%;
         background-color: #fff;
         position: relative;
         z-index: 100;
@@ -94,7 +94,7 @@
     }
     #selectRubrics .rubrics__option{
         position: absolute;
-        top: 40px;
+        top: 43px;
         left: 0;
         width: 180px;
     }
@@ -103,15 +103,11 @@
     #selectRubrics:active{
         background: #fff;
         color: #000;
-        background: url("../assets/ic_expand_more_black_18px.png") no-repeat center right;
+        background: url("../assets/ic_expand_more_black_18px.png") no-repeat no-repeat 95% 50%;
         background-color: #fff;
-        -webkit-border-radius: 20px 20px 0 0;
-        -moz-border-radius: 20px 20px 0 0;
-        border-radius:  20px 20px 0 0;
     }
     #selectRubrics p:hover{
         color: #4BBAC5;
-
     }
     .rubrics__option p{
         height: 40px;
@@ -124,12 +120,12 @@
         color: #000;
         background: #fff;
     }
-    .rubrics__option p:last-child{
-        -webkit-border-radius: 0 0 20px 20px;
-        -moz-border-radius: 0 0 20px 20px;
-        border-radius: 0 0 20px 20px;
+    .rubrics__option p:first-child{
+        -webkit-border-radius: 20px 20px 0 0;
+        -moz-border-radius: 20px 20px 0 0;
+        border-radius: 20px 20px 0 0;
     }
-    .rubrics__option p:last-child:hover{
+    .rubrics__option p:last-child{
         -webkit-border-radius: 0 0 20px 20px;
         -moz-border-radius: 0 0 20px 20px;
         border-radius: 0 0 20px 20px;

@@ -1,6 +1,9 @@
 <template>
     <ul class="category-list">
-        <li class="category-list__item" v-for="(categoryItem, index) in categoryListItem.slice(0,6)" :key="index">
+        <li class="category-list__item"
+            v-for="(categoryItem, index) in categoryListItem.slice(0, 6)"
+            :key="index"
+        >
             <span></span>
             {{ categoryItem }}
         </li>
@@ -41,9 +44,23 @@
                 ]
             }
         },
+        computed: {
+            showList: () => {
+                return this.categoryListItem.filter(function (categoryItem) {
+                    return categoryItem.slice(6, )
+                })
+            }
+        }
     }
 </script>
 
 <style>
-
+    .category-list{
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
 </style>

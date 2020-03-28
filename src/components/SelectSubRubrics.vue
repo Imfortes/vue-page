@@ -38,9 +38,7 @@
                     'Любая подрубрика 4',
                     'Любая подрубрика 5',
                     'Любая подрубрика 6',
-                    'Любая подрубрика 7',
-                    'Любая подрубрика 8',
-                    'Любая подрубрика 9'
+                    'Любая подрубрика 7'
                 ]
             }
         },
@@ -65,7 +63,7 @@
         border-radius: 20px;
         padding: 8px 8px 8px 24px;
         appearance: none;
-        background: url("../assets/ic_expand_more_black_18px.png") no-repeat center right;
+        background: url("../assets/ic_expand_more_black_18px.png") no-repeat 95% 50%;
         background-color: #fff;
     }
     #subRubrics p{
@@ -78,7 +76,7 @@
     }
     #subRubrics .sub-rubrics__option{
         position: absolute;
-        top: 40px;
+        top: 43px;
         left: 0;
         width: 197px;
     }
@@ -87,11 +85,9 @@
     #subRubrics:active{
         background: #fff;
         color: #000;
-        background: url("../assets/ic_expand_more_black_18px.png") no-repeat center right;
+        background: url("../assets/ic_expand_more_black_18px.png") no-repeat no-repeat 95% 50%;
         background-color: #fff;
-        -webkit-border-radius: 20px 20px 0 0;
-        -moz-border-radius: 20px 20px 0 0;
-        border-radius:  20px 20px 0 0;
+
     }
     #subRubrics p:hover{
         color: #4BBAC5;
@@ -108,16 +104,17 @@
         color: #000;
         background: #fff;
     }
+    .sub-rubrics__option p:first-child{
+        -webkit-border-radius: 20px 20px 0 0;
+        -moz-border-radius: 20px 20px 0 0;
+        border-radius: 20px 20px 0 0;
+    }
     .sub-rubrics__option p:last-child{
         -webkit-border-radius: 0 0 20px 20px;
         -moz-border-radius: 0 0 20px 20px;
         border-radius: 0 0 20px 20px;
     }
-    .sub-rubrics__option p:last-child:hover{
-        -webkit-border-radius: 0 0 20px 20px;
-        -moz-border-radius: 0 0 20px 20px;
-        border-radius: 0 0 20px 20px;
-    }
+
     .options p:hover{
         color: #4BBAC5;
     }

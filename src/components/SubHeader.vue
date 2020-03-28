@@ -85,5 +85,9 @@
     .subheader--hidden {
         display: none;
     }
+    subheader .select-city option{
+        position: relative;
+        z-index: 100;
+    }
 
 </style>

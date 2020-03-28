@@ -165,6 +165,11 @@ export default {
         background-color: #263548;
         outline: none;
         cursor: pointer;
+        transition: 0.5s;
+    }
+    .search-btn:hover{
+        background-color: #B7E3E8;
+        color: #263548;
     }
     .search-btn-map{
         text-transform: uppercase;
@@ -178,5 +183,10 @@ export default {
         color: #263548;
         outline: none;
         cursor: pointer;
+        transition: 0.5s;
+    }
+    .search-btn-map:hover{
+        background-color: #263548;
+        color: rgba(255, 255, 255, .6);
     }
 </style>
